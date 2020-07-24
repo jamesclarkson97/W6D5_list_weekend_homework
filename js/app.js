@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // const button = document.querySelector('#button');
-    // button.addEventListener('click', handleButtonClick);
+    const deleteButton = document.querySelector('#delete');
+    deleteButton.addEventListener('click', handleButtonClick);
   
     // const textInput = document.querySelector('#input');
     // textInput.addEventListener('input', handleInput);
@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handleFormSubmit);
   });
 
-
-
-//   const handleButtonClick = function () {
-//     const resultParagraph = document.querySelector('#button-result');
-//     resultParagraph.textContent = 'That button has definitely been clicked.';
-//   };
+  const handleButtonClick = function () {
+    const result = document.querySelector('li');
+    result.remove('*');
+  };
   
 //   const handleInput = function (event) {
 //     const resultParagraph = document.querySelector('#input-result');
