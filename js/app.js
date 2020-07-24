@@ -32,11 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleFormSubmit = function (event) {
     event.preventDefault();
     const resultParagraph = document.createElement('li');
-    resultParagraph.textContent = `${event.target.name.value} is a 
+    resultParagraph.textContent = `${event.target.name.value} is a cause of
       ${event.target.category.value} anaemia.`;
     
     const list = document.querySelector('ul');
     list.appendChild(resultParagraph);
+    console.log(list);
   };
 
     
