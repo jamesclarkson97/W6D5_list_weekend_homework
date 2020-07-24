@@ -24,13 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   const handleLastButtonClick = function () {
-    const result = document.querySelector('li').firstChild;
-    result.remove();
+    const result = document.querySelector('#causes');
+    result.removeChild(result.lastChild);
   };
 
   const handleAllButtonClick = function () {
     const result = document.querySelector('#causes');
-    
     while (result.firstChild) {
         result.removeChild(result.lastChild);
       };
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const list = document.querySelector('#causes');
     list.appendChild(resultParagraph);
-    console.log(list);
   };
 
     
