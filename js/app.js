@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const deleteButton = document.querySelector('#delete');
-    deleteButton.addEventListener('click', handleButtonClick);
+    const deleteFirstButton = document.querySelector('#delete_first');
+    deleteFirstButton.addEventListener('click', handleFirstButtonClick);
+
+    const deleteLastButton = document.querySelector('#delete_last');
+    deleteLastButton.addEventListener('click', handleLastButtonClick);
+
+    const deleteAllButton = document.querySelector('#delete_all');
+    deleteAllButton.addEventListener('click', handleAllButtonClick);
   
     // const textInput = document.querySelector('#input');
     // textInput.addEventListener('input', handleInput);
@@ -12,11 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handleFormSubmit);
   });
 
-  const handleButtonClick = function () {
+  const handleFirstButtonClick = function () {
     const result = document.querySelector('li');
-    result.remove('*');
+    result.remove();
   };
   
+  const handleLastButtonClick = function () {
+    const result = document.querySelector('li').firstChild;
+    result.remove();
+  };
+
+  const handleAllButtonClick = function () {
+    const result = document.querySelector('li');
+    result.remove();
+  };
 //   const handleInput = function (event) {
 //     const resultParagraph = document.querySelector('#input-result');
 //     resultParagraph.textContent = `You typed: ${event.target.value}`;
@@ -32,8 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultParagraph = document.createElement('li');
     resultParagraph.textContent = `${event.target.name.value} is a cause of
       ${event.target.category.value} anaemia.`;
-    
-    const list = document.querySelector('ul');
+    resultParagraph.id = `${event.target.name.value} ${event.target.category.value}`
+
+    const list = document.querySelector('#causes');
     list.appendChild(resultParagraph);
     console.log(list);
   };
