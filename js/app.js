@@ -29,8 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleAllButtonClick = function () {
-    const result = document.querySelector('li');
-    result.remove();
+    const result = document.querySelector('#causes');
+    
+    while (result.firstChild) {
+        result.removeChild(result.lastChild);
+      };
   };
 //   const handleInput = function (event) {
 //     const resultParagraph = document.querySelector('#input-result');
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultParagraph = document.createElement('li');
     resultParagraph.textContent = `${event.target.name.value} is a cause of
       ${event.target.category.value} anaemia.`;
-    resultParagraph.id = `${event.target.name.value} ${event.target.category.value}`
+    // resultParagraph.id = `${event.target.name.value} ${event.target.category.value}`
 
     const list = document.querySelector('#causes');
     list.appendChild(resultParagraph);
