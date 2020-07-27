@@ -1,20 +1,10 @@
 body {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
+    font-family: "Times New Roman";
     margin-left: 30px;
-    background-color: #ffff9a;
-  }
-  
-  h1, h2 {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #f7dcb9;
   }
   
   h2 {
     text-decoration: underline;
-    padding-top: 20px;
+    font-weight: bold;
   }
-  
-  label {
-    font-weight: normal;
-  }
-  
